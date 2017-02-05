@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Reliable UDP chat</title>
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h3>Communicator</h3>
+		<div class="btn_wrapper">
+			<button id="connectBtn" class="btn-basic bor-green" autofocus>Connect</button>
+			<button id="listenForConnectionBtn" class="btn-basic bor-red">Wait for connection</button>
+		</div>
+		<h4 id="state-lbl"></h4>
+		<div id="chat-container">
+			<div id="chat-header">Messages</div>
+			<div id="chat" class="selectable"></div>
+			<div class="input-box">
+				<input type="text" id="messageBox" autofocus>
+				<button type="button" id="sendBtn"  class="btn-basic bor-blue">Send</button>
+			</div>
+		</div>
+		<div id="info-container">
+			<div id="info-header">Info</div>
+			<div id="info" class="selectable"></div>
+		</div>
+		<div class="forms">
+			<form class="fragment-form">
+				Fragment size (Bytes):
+				<input  type="text" id="fragments" class="fragment-input" value="20">
+			</form>
+			<form class="fragment-form">
+				Send damaged fragment #:
+				<input  type="text" id="err-num" class="fragment-input" value="-1">
+			</form>
+		</div>
+		<form>
+			<button class="btn-basic btn-back" id="choose-file">Choose file to send</button>
+		</form>
+		<form id="dialog-form">
+		<div id="dialog"></div>
+			<div id="dialogBtns">
+				<button type="button" id="okBtn"  class="btn-basic bor-blue">OK</button>
+				<button type="button" id="cancelBtn"  class="btn-basic bor-red" onclick="">Cancel</button>
+			</div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/send.js"></script>
+<script type="text/javascript" src="scripts/receive.js"></script>
+<script type="text/javascript" src="scripts/datagram.js"></script>
+
+</html>
